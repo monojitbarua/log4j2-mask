@@ -1,0 +1,16 @@
+<Configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="com.log4j2mask.log4j2mask.log4j2.PatternMaskingLayout">
+                <!--<maskPattern>creditCard(.*?)\d+</maskPattern>  SourcePan pattern
+                <maskPattern>password(.*?)([^\s]*)</maskPattern>-->
+                <maskPattern>XML:DOB</maskPattern>
+                <maskPattern>JSON:account</maskPattern>
+                <pattern>%msg%n%ex</pattern>
+            </layout>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+</Configuration>
